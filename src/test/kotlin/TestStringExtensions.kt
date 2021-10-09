@@ -47,7 +47,7 @@ class TestStringExtensions {
             testingString.revInd(-20)
             Assert.fail()
         } catch (error: IllegalArgumentException) {
-            Assert.assertTrue(error.message!!.isNotEmpty())
+            Assert.assertFalse(error.message!!.isEmpty())
         }
     }
 
