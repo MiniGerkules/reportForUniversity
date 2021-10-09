@@ -6,12 +6,12 @@ import org.junit.Test
  * @author Katser Eugene
  */
 class TestStringExtensions {
-    @Test
     /**
      * The method tests the function countChar
      * @author Katser Eugene
      * @see countChar
      */
+    @Test
     fun testCountChar() {
         val testingString = "Very simple example"
         val testingSymbols = arrayListOf('a', 'm', 'e')
