@@ -39,16 +39,11 @@ class TestStringExtensions {
      * @author Katser Eugene
      * @see revInd
      */
-    @Test
+    @Test(expected = IllegalArgumentException::class)
     fun testRevIndWithException1() {
         val testingString = "0123456789"
 
-        try {
-            testingString.revInd(-20)
-            Assert.fail()
-        } catch (error: IllegalArgumentException) {
-            Assert.assertFalse(error.message!!.isEmpty())
-        }
+        testingString.revInd(-20)
     }
 
     /**
