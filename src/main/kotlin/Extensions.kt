@@ -2,11 +2,7 @@
  * The function counts the number of characters that match <code>symbol</code>
  * @param symbol the character to be counted
  */
-fun String.countChar(symbol: Char): Int {
-    var numberOfSymbol = 0
-    this.forEach { curSym -> if (curSym == symbol) ++numberOfSymbol }
-    return numberOfSymbol
-}
+fun String.countChar(symbol: Char): Int = this.count { it == symbol }
 
 /**
  * The function implements reverse indexing of strings
