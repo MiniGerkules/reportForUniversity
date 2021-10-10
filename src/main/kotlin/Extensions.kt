@@ -1,6 +1,5 @@
 /**
  * The function counts the number of characters that match <code>symbol</code>
- * @author Katser Eugene
  * @param symbol the character to be counted
  */
 fun String.countChar(symbol: Char): Int {
@@ -11,7 +10,6 @@ fun String.countChar(symbol: Char): Int {
 
 /**
  * The function implements reverse indexing of strings
- * @author Katser Eugene
  * @param index the negative index of the desired character
  * @exception IllegalArgumentException if the index is out of bounds of the
  * string, an exception is thrown
@@ -27,7 +25,6 @@ fun String.revInd(index: Int): Char {
 /**
  * The function divides a string into pairs of characters. If there is not
  * enough character for the last pair, the character '_' is added
- * @author Katser Eugene
  * @return the list of strings consisting of a pair of characters
  */
 fun String.splitToPair(): MutableList<String> {
