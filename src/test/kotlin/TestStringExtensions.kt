@@ -10,7 +10,7 @@ class TestStringExtensions {
      * @see countChar
      */
     @Test
-    fun testCountChar() {
+    fun `test function countChart`() {
         val testingString = "Very simple example"
         val testingSymbols = arrayListOf('a', 'm', 'e')
         val realResults = arrayListOf(1, 2, 4)
@@ -24,11 +24,11 @@ class TestStringExtensions {
      * @see revInd
      */
     @Test
-    fun testRevIndWithoutException() {
+    fun `test function revInd without exception`() {
         val testingString = "0123456789"
 
         for (i in testingString.indices)
-            Assert.assertEquals((-i + 9).digitToChar(), testingString.revInd(-i))
+            Assert.assertEquals((9 - i).digitToChar(), testingString.revInd(-i))
     }
 
     /**
@@ -36,7 +36,7 @@ class TestStringExtensions {
      * @see revInd
      */
     @Test(expected = IllegalArgumentException::class)
-    fun testRevIndWithException1() {
+    fun `test1 function revInd with exception`() {
         val testingString = "0123456789"
 
         testingString.revInd(-20)
@@ -47,7 +47,7 @@ class TestStringExtensions {
      * @see revInd
      */
     @Test
-    fun testRevIndWithException2() {
+    fun `test2 function revInd with exception`() {
         val testingString = "0123456789"
 
         try {
@@ -63,7 +63,7 @@ class TestStringExtensions {
      * @see splitToPair
      */
     @Test
-    fun testSplitToPair() {
+    fun `test function splitToPair`() {
         val testingArray = arrayOf("abcd", "abcde", "abcdef", "abcdefg")
         val haveUnderscore = arrayOf(false, true, false, true)
         val resultLengthArray = arrayOf(2, 3, 3, 4)
@@ -74,5 +74,22 @@ class TestStringExtensions {
             Assert.assertEquals(resultLengthArray[i], splittingString.size)
             Assert.assertTrue((splittingString.last().last() == '_') == haveUnderscore[i])
         }
+    }
+
+    /**
+     * Method tests string construction
+     */
+    @Test
+    fun `string pull testing`() {
+        val firstStr = "123456"
+        val secondStr = firstStr
+        val thirdStr = "123456"
+        val fourthStr = String(charArrayOf('1', '2', '3', '4', '5', '6'))
+
+        Assert.assertSame(firstStr, secondStr)
+        Assert.assertSame(secondStr, thirdStr)
+
+        Assert.assertArrayEquals(thirdStr.toCharArray(), fourthStr.toCharArray())
+        Assert.assertNotSame(thirdStr, fourthStr)
     }
 }
