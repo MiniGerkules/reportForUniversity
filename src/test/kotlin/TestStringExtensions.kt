@@ -75,21 +75,4 @@ class TestStringExtensions {
             Assert.assertTrue((splittingString.last().last() == '_') == haveUnderscore[i])
         }
     }
-
-    /**
-     * Method tests string construction
-     */
-    @Test
-    fun `string pull testing`() {
-        val firstStr = "123456"
-        val secondStr = firstStr
-        val thirdStr = "123456"
-        val fourthStr = String(charArrayOf('1', '2', '3', '4', '5', '6'))
-
-        Assert.assertSame(firstStr, secondStr)
-        Assert.assertSame(secondStr, thirdStr)
-
-        Assert.assertArrayEquals(thirdStr.toCharArray(), fourthStr.toCharArray())
-        Assert.assertNotSame(thirdStr, fourthStr)
-    }
 }
